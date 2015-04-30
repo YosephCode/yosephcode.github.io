@@ -38,6 +38,7 @@ app.controller('ModalController', function ($scope) {
 		var crud = "addCar";
 		$scope.$emit('LAST_IMAGE_CAR_ADD', crud);	
 		
+        delete $scope.car;
 		/* Zera o form de cadastro */
 		$( '#newsletterform' ).each(function(){
 		    this.reset();
