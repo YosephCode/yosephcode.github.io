@@ -45,7 +45,7 @@ app.controller('CarsController', ['$scope','$http', function($scope, $http){
         if(value === "read") {
         	
         	angular.forEach($scope.cars, function(obj) {
-			    if(obj.imagem == null || obj.imagem == undefined || obj.imagem == "")   {
+			    
 			    	switch (obj.marca) {
 					    case 'Volkswagem':
 					    	obj.imagem = "http://www.eventimare.it/wp-content/uploads/2014/11/volkswagen.png";
@@ -56,42 +56,32 @@ app.controller('CarsController', ['$scope','$http', function($scope, $http){
 					    default: 
 					    	obj.imagem = "https://contaazul.com/img/fb_thumb3.jpg"; 
 					}
-			    }
+			    
 		    });
-
         }else if(value === "addCar") {
-        	
-        	if($scope.cars[$scope.cars.length-1].imagem == null || $scope.cars[$scope.cars.length-1].imagem == undefined || $scope.cars[$scope.cars.length-1].imagem == ""){
-				switch ($scope.cars[$scope.cars.length-1].marca) {
-				    case 'Volkswagem':
-				    	$scope.cars[$scope.cars.length-1].imagem = "http://www.eventimare.it/wp-content/uploads/2014/11/volkswagen.png";
-				    	break;	
-				    case 'Fiat':
-				    	$scope.cars[$scope.cars.length-1].imagem = "http://www.vectorsland.com/imgd/l2246-fiat-logo-79818.png";
-				    	break;
-				    default: 
-				    	$scope.cars[$scope.cars.length-1].imagem = "https://contaazul.com/img/fb_thumb3.jpg"; 
-				}
 
-				
+			switch ($scope.cars[$scope.cars.length-1].marca) {
+			    case 'Volkswagem':
+			    	$scope.cars[$scope.cars.length-1].imagem = "http://www.eventimare.it/wp-content/uploads/2014/11/volkswagen.png";
+			    	break;	
+			    case 'Fiat':
+			    	$scope.cars[$scope.cars.length-1].imagem = "http://www.vectorsland.com/imgd/l2246-fiat-logo-79818.png";
+			    	break;
+			    default: 
+			    	$scope.cars[$scope.cars.length-1].imagem = "https://contaazul.com/img/fb_thumb3.jpg"; 
 			}
-
         }else if(value === "update"){
-        	
-        	if(newValue.imagem == null || newValue.imagem == undefined || newValue.imagem == ""){
-				switch (newValue.marca) {
-				    case 'Volkswagem':
-				    	newValue.imagem = "http://www.eventimare.it/wp-content/uploads/2014/11/volkswagen.png";
-				    	break;	
-				    case 'Fiat':
-				    	newValue.imagem = "http://www.vectorsland.com/imgd/l2246-fiat-logo-79818.png";
-				    	break;
-				    default: 
-				    	newValue.imagem = "https://contaazul.com/img/fb_thumb3.jpg"; 
-				}
-			}
+        	    	
+			switch (newValue.marca) {
+			    case 'Volkswagem':
+			    	newValue.imagem = "http://www.eventimare.it/wp-content/uploads/2014/11/volkswagen.png";
+			    	break;	
+			    case 'Fiat':
+			    	newValue.imagem = "http://www.vectorsland.com/imgd/l2246-fiat-logo-79818.png";
+			    	break;
+			    default: 
+			    	newValue.imagem = "https://contaazul.com/img/fb_thumb3.jpg"; 
+			}		
         }
     });
-
-
 }]);
