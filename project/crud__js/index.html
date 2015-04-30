@@ -1,0 +1,108 @@
+<!Doctype html>
+<html>
+<head>
+
+	<meta charset="utf-8">
+	<title>Crud Veiculo</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<!-- Stylesheet --> 
+	<link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/main.css">
+
+</head>
+<body ng-app="register">
+	
+	<section class="container-fluid" ng-controller="CarsController">
+		
+		<article ng-controller="ModalController">
+			
+			<!-- Action create car-->
+			<header class="header__action--createCar">
+				<a class="btn btn-primary btn-success btn-lg" ng-click="toggleModal(); setState('cadastro')">Cadastrar Carro</a>
+			</header>
+			
+			<!-- Dynamic modal to car // diretiva <modal>-->
+			<modal title="Dados do Veículo" visible="showModal" ng-cloak>
+				<div ng-include src="template"></div>
+		    </modal>
+			
+			<!-- Search car or cars -->
+			<article class="container table table--search">
+				<div class="row">
+					<div class="form-group hidden-xs col-sm-4 col-md-3">
+						<label for="placa">Buscar Placa</label>
+						<input type="text" class="form-control" ng-model="searching.placa" />
+					</div>
+					<div class="form-group hidden-xs col-sm-4 col-md-3">
+						<label for="modelo">Buscar Modelo</label>
+						<input type="text" class="form-control" ng-model="searching.modelo" />
+					</div>
+					<div class="form-group col-xs-6 col-sm-4 col-md-3">
+						<label for="marca">Buscar Marca</label>
+						<input type="text" class="form-control" ng-model="searching.marca" />
+					</div>
+					<div class="form-group hidden-xs hidden-sm col-md-3">
+						<label for="combustivel">Buscar Combustível</label>
+						<input type="text" class="form-control" ng-model="searching.combustivel" />
+					</div>
+				</div>
+			</article>
+			
+			<!-- Read data of cars -->
+			<table ng-table="tableParams" class="container table table-striped" ng-cloak>
+			    
+			    <thead>
+			        <tr>
+			            <th class="hidden-xs">Placa</th>
+			            <th>Imagem</th>
+			            <th class="hidden-xs">Modelo</th>
+			            <th>Marca</th>
+			            <th class="hidden-xs">Combustível</th>
+			            <th>Ações</th>
+			        </tr>
+			    </thead>
+
+			    <tbody>
+			        <tr ng-repeat="car in cars | filter:searching:strict" ng-cloak>
+			            <td class="hidden-xs" data-title="'Placa'">
+			                <span>{{car.placa}}</span>
+			            </td>
+			            <td data-title="'Imagem'">
+			                <img width="60" height="60" src="{{car.imagem}}">
+			            </td>
+			            <td class="hidden-xs" data-title="Modelo">
+			                <span>{{car.modelo}}</span>
+			            </td>
+			            <td data-title="Marca">
+			                <span>{{car.marca}}</span>
+			            </td>
+			            <td class="hidden-xs"data-title="Combustível">
+			                <span>{{car.combustivel}}</span>
+			            </td>
+
+			            <td data-title="Ações">
+			                <a class="btn btn-primary btn-xs" ng-click="toggleModal(); updateDataCar($index);">Edit</a>
+			                <a class="btn btn-default btn-xs" ng-click="removeCar($index)">Delete</a>
+			            </td>
+			        </tr>
+			    </tbody>
+
+			</table>
+
+		</article>
+	</section>
+
+	
+
+	<!-- Scripts -->
+	<script src="/bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script src="/bower_components/angular/angular.min.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript" src="js/modals/modals__directive.js"></script>
+	<script type="text/javascript" src="js/modals/controller/modals__controller.js"></script>
+	
+</body>
+</html>

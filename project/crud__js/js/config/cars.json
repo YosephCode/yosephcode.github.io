@@ -1,0 +1,39 @@
+{
+	"cars" : [ 
+		{   
+			"combustivel" : "Flex",
+			"imagem" : null,
+			"marca" : "Volkswagem",
+			"modelo" : "Gol",
+			"placa" : "FFF5498"
+		},
+		{ 
+			"combustivel" : "Flex",
+			"imagem" : null,
+			"marca" : "Fiat",
+			"modelo" : "Punto",
+			"placa" : "PAI4421"
+		},
+		{ 
+			"combustivel" : "Gasolina",
+			"imagem" : null,
+			"marca" : "Volkswagem",
+			"modelo" : "Fox",
+			"placa" : "FOX4025"
+		},
+		{ 
+			"combustivel" : "Alcool",
+			"imagem" : null,
+			"marca" : "Volkswagem",
+			"modelo" : "Fox",
+			"placa" : "FOX4125"
+		},
+		{ 
+			"combustivel" : "Alcool",
+			"imagem" : null,
+			"marca" : "Fiat",
+			"modelo" : "Tipo",
+			"placa" : "PAI4121"
+		}
+	]  
+}

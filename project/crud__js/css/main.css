@@ -1,0 +1,39 @@
+body .container-fluid {
+  width: 70%;
+  margin: 0 auto;
+}
+body .container-fluid .btn {
+  padding: 6px 15px;
+}
+body .container-fluid .header__action--createCar {
+  padding: 20px 0;
+}
+body .container-fluid .table tr td {
+	vertical-align: middle;
+}
+body .container-fluid .table tr td .table--search{
+	padding: 0;
+}
+
+/*---------------------
+	Responsivo básico
+-----------------------*/
+@media (max-width: 992px){
+	body .container-fluid{
+		width: 90%
+	}
+}
+@media (max-width: 768px){
+	body .container-fluid{
+		width: 100%
+	}
+}
+@media (max-width: 480px){
+	body .container-fluid .btn {
+	  padding: 6px 8px;
+	}
+	body .container-fluid .table--search .form-group{
+		width: 100% !important;
+	}
+}
+
