@@ -48,12 +48,21 @@ app.controller('ModalController', function ($scope) {
 
     /*---------------------------------------------------------- 
     	evento: CAR_READY
-    	descrição: adiciona o carro na lista/tabela pela modal,
-    	verifica imagem e zera dados escritos no form 
+    	descrição: seleciona a modal e envia os dados do carro 
+        selecionado.
     ------------------------------------------------------------*/
-	$scope.$on('CAR_READY', function (event, car) {
-        $scope.updateCar = car;
-        $scope.setState('editar'); 
+    $scope.$on('CAR_READY', function (event, car, state) {
+
+        if(state === "read"){
+            $scope.read = car;    
+            $scope.setState('visualizar');
+            $scope.toggleModal();
+            
+        }else if(state === "update"){
+            $scope.updateCar = car;
+            $scope.setState('editar');
+            $scope.toggleModal();
+        }
     });
 
 

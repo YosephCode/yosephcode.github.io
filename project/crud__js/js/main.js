@@ -31,7 +31,17 @@ app.controller('CarsController', ['$scope','$http', function($scope, $http){
 		descrição: Mostra os dados do carro e permite alteração 
 	------------------------------------------------------------*/
 	$scope.updateDataCar = function(car){
-		$scope.$broadcast('CAR_READY', $scope.cars[car]);
+		var state = "update";
+		$scope.$broadcast('CAR_READY', $scope.cars[car], state);
+	}
+
+	/*----------------------------------------------------------
+		function: readCar(index)
+		descrição: Mostra os dados do carro  
+	------------------------------------------------------------*/
+	$scope.readCar = function(car){
+		var state = "read";
+		$scope.$broadcast('CAR_READY', $scope.cars[car], state);	
 	}
 
 	
