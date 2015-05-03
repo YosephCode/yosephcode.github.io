@@ -49,5 +49,8 @@ body .container-fluid input#marca{
 		width: 60px;
 		height: 60px;
 	} 
+	body .container-fluid .table tr td.td__modelo{
+		width: 160px;
+	} 
 }
 
