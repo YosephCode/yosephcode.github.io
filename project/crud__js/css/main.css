@@ -14,6 +14,12 @@ body .container-fluid .table tr td {
 body .container-fluid .table tr td .table--search{
 	padding: 0;
 }
+body .container-fluid .table td .glyphicon-info-sign{
+	font-size: 25px;
+  	vertical-align: middle;	
+  	cursor: pointer;
+  	text-decoration: none;
+}
 
 /*---------------------
 	Responsivo básico
