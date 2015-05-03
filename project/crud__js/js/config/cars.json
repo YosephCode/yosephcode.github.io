@@ -24,13 +24,6 @@
 		{ 
 			"combustivel" : "Alcool",
 			"imagem" : null,
-			"marca" : "Volkswagem",
-			"modelo" : "Fox",
-			"placa" : "FOX4125"
-		},
-		{ 
-			"combustivel" : "Alcool",
-			"imagem" : null,
 			"marca" : "Fiat",
 			"modelo" : "Tipo",
 			"placa" : "PAI4121"

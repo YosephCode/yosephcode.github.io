@@ -20,6 +20,10 @@ body .container-fluid .table td .glyphicon-info-sign{
   	cursor: pointer;
   	text-decoration: none;
 }
+body .container-fluid input#marca{
+	text-transform: capitalize;
+}   
+
 
 /*---------------------
 	Responsivo básico
